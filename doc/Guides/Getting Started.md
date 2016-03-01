@@ -134,7 +134,7 @@ In this step you will set up your Bosch IoT Cloud Space to prepare it for XDK Cl
   ![Empty space in the developer console][img_cloudspace_empty]
   2. Select the *MongoDB* Service.  
   ![IoT marketplace][img_marketplace]
-  3. Choose the *Silver - Production* service plan and click on **Select this plan**.  
+  3. Choose the *Shared MongoDB Silver - QA* service plan and click on **Select this plan**.  
   ![Select plan][img_selectplan_mongo]
   4. In the following dialog use `xdk_service_storage` for the service instance id.
   5. Select your *HackXX* space and hit the **Add** button.  
