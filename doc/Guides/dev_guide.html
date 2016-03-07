@@ -299,7 +299,11 @@ img {
 <body>
 <h1>Bosch IoT XDK Demo App Developer Guide</h1>
 <p>This guide is a collection of useful HowTos, tips and tricks to ease up your hackathon life in no particular order.</p>
-<p><a name="nav_runlocally"></a></p>
+<h2>Contents</h2>
+<p><a href="#Run-the-Demo-App-Locally">Run the Demo App Locally</a><br />
+<a href="#Setup-your-Cloud-Development-Environment-without-Admin-Rights-Windows">Setup your Cloud Development Environment without Admin Rights (Windows)</a><br />
+<a href="#Follow-the-Sensor-Values">Follow the Sensor Values</a>  </p>
+<p><a name="Run-the-Demo-App-Locally"></a></p>
 <h2>Run the Demo App Locally</h2>
 <p>When developing your cloud app it is usually necessary to see the changes you have made, without having to push your app to the cloud.<br />
 The Bosch IoT XDK Demo App has two spring run time profiles. <code>application-prod.yml</code> is used, when running the app in the cloud. <code>application-dev.yml</code> is used, when running the app in all other scenarios. In this chapter we will show you how you can run the Bosch IoT XDK Demo App using the dev profile. </p>
@@ -307,14 +311,14 @@ The Bosch IoT XDK Demo App has two spring run time profiles. <code>application-p
 <p>Note: When the app runs locally, it still uses the same cloud service instances of the Bosch IoT Suite services as the cloud instance of the app.   
 </p>
 </blockquote>
-<p>You will need the following software additionally to the software required in the <a href="./Getting%20Started.html#nav_prereq">Getting Started Guide</a>:</p>
+<p>You will need the following software additionally to the software required in the <a href="./Getting%20Started.md#prerequisites-and-resources">Getting Started Guide</a>:</p>
 <ul>
 <li>latest <a href="https://www.mongodb.org/downloads">MongoDB</a> Community Edition (starting with 3.0)</li>
 </ul>
 <p>To run your application do the following:</p>
 <ol>
 <li>
-<p>First complete the <a href="./Getting%20Started.html">Getting Started Guide</a>. </p>
+<p>First complete the <a href="./Getting%20Started.md">Getting Started Guide</a>. </p>
 <blockquote>
 <p>Note: The cloud services have to be bound to the cloud instance of your application, in order for you to be able to see all needed environment variables for step 3 of this chapter. This means that you have to push your app to the cloud prior to running it locally.</p>
 </blockquote>
@@ -348,7 +352,7 @@ im3:
 </code></pre>
 
 <ul>
-<li>You have set the <code>aliasPassword</code> and the <code>keyStorePassword</code> when generating the keystore and alias in the <a href="./Getting%20Started.html#nav_appsetup">Getting Started Guide</a></li>
+<li>You have set the <code>aliasPassword</code> and the <code>keyStorePassword</code> when generating the keystore and alias in the <a href="./Getting%20Started.md#deploy-the-bosch-IoT-XDK-demo-app">Getting Started Guide</a></li>
 <li>
 To get the <code>apiKey</code> and the <code>crClientId</code> of your <code>cr</code> configuration go to the <a href="https://apps.sys.bosch-iot-cloud.com/">Developer Console</a> of the Bosch IoT Cloud, login, open your <em>space</em> and click on the cloud instance of your application.
 <ul>
@@ -371,7 +375,7 @@ To get the details of the <code>im3</code> configuration click on <strong>Show c
 <li>Run the App locally by starting the main() in <code>\CloudApp\src\main\java\com\bosch\demo\xdkcloudapp\Application.java</code></li>
 <li>The Bosch IoT XDK Demo App is now reachable under <a href="http://localhost:8080">http://localhost:8080</a>.</li>
 </ol>
-<p><a name="nav_noAdminInstall"></a></p>
+<p><a name="Setup-your-Cloud-Development-Environment-without-Admin-Rights-Windows"></a></p>
 <h2>Setup your Cloud Development Environment without Admin Rights (Windows)</h2>
 <blockquote>
 <p>Note: If you don't have admin rights on your Windows system, you can still complete most of the Getting Started guide assuming you have an installed Oracle JDK 1.8. Without admin rights you won't be able to install the XDK Workbench thus you won't be able to reprogram or flash the XDK.</p>
@@ -380,11 +384,11 @@ To get the details of the <code>im3</code> configuration click on <strong>Show c
 <li>
 <p>In order to have a working connection between the XDK and the Bosch IoT XDK Demo App, ask someone with admin rights to flash your XDK with the LWM2M firmware.</p>
 <blockquote>
-<p>Note: Make sure you already have Java JDK 1.8 installed on your machine. If not, look for a portable Java 8 distribution and/or instructions to install Oracle Java JDK 1.8 without admin rights.</p>
+<p>Note: Make sure you already have Java JDK 1.8 installed on your machine. If not, look for a portable Java 8 distribution and/or instructions to install Oracle Java JDK 1.8 without admin rights. If you have a Bosch PEACY system with admin rights and are still having problems installing JDK 1.8, use the following command in a admin shell to install JDK with the downloaded installer: <code>jdk-8u73-windows-x64.exe INSTALL_SILENT=0  STATIC=1</code>.</p>
 </blockquote>
 </li>
 <li>
-<p>Install Java, your preferred IDE, Maven and git as described in the steps 1-4 in the <a href="Getting%20Started.html#nav_devsetup">Setup your Cloud Development Environment Chapter</a> of the Getting Started guide. (These can be done without admin rights).</p>
+<p>Install Java, your preferred IDE, Maven and git as described in the steps 1-4 in the <a href="Getting%20Started.md#setup-your-cloud-development-environment">Setup your Cloud Development Environment Chapter</a> of the Getting Started guide. (These can be done without admin rights).</p>
 </li>
 <li>
 <p>In a suitable place create the following folder structure <em>...\nodejs\node_modules\</em>.</p>
@@ -403,7 +407,7 @@ To get the details of the <code>im3</code> configuration click on <strong>Show c
 </li>
 <li>
 <p>Copy <code>...\nodejs\node_modules\npm\bin\npm.cmd</code> to <em>...\nodejs\node.cmd</em>. The resulting structure should look as in the screenshot below.<br />
-<img src="./resources/img/img_node_folderstruct.png" alt="Folder strucutre for no-admin-install" /></p>
+<img src="./resources/img/img_node_folderstruct.png" alt="Folder structure for no-admin-install" /></p>
 </li>
 <li>
 <p>Add the following paths to your PATH environment variable:  
@@ -426,7 +430,450 @@ To get the details of the <code>im3</code> configuration click on <strong>Show c
 </ul>
 </li>
 <li>
-<p>Resume with the next chapter in the <a href="Getting%20Started.html#nav_cloudsetup">Getting Started guide</a>.</p>
+<p>Resume with the next chapter in the <a href="Getting%20Started.md#setup-your-cloud-space">Getting Started guide</a>.</p>
+</li>
+</ol>
+<h1>Understanding the Code</h1>
+<p>In order to make it easy for you to understand, how the Bosch IoT XDK Demo App works inside as quick as possible, we will follow two paths of data exchange between the UI and the XDK. First we will follow the sensor values from the XDK to the UI and second we will follow a configuration update from the UI to the XDK. As both ways already cover the most important parts of the code, it should be a lot easier for you to integrate a different device, change the XDK behavior or mingle and visualize with the data from all your devices.  </p>
+<p>But first of all let us look at the apps architecture once more.<br />
+<img src="./resources/img/xdk_cloudAppArchitecturePaths.png" alt="Bosch IoT XDK Demo App Architecture" />  </p>
+<p>As you can see there are two ways the Bosch IoT XDK Demo Frontend communicates with the Backend. One is using REST endpoints and the other is using web sockets. So for example a configuration update from the UI is using a REST API (green path)  while for example sensor values are updated using a web socket (red path).</p>
+<h2>Follow the Sensor Values</h2>
+<p><img src="./resources/img/xdk_cloudAppArchRedPath.png" alt="Follow the Sensor Value Updates Architecture" />  </p>
+<p>This chapter will help you understand, how the XDK sensor values are propagated through the code from the XDK to the Bosch IoT XDK Demo App UI.</p>
+<h3>From XDK to Bosch IoT Things (Central Registry) Service</h3>
+<ol>
+<li>
+<p>Let's start in the LWM2M firmware on the Bosch XDK. Go to the XDK Workbench and open the sources folder. We will have a look at the barometer sensor. You will find the barometer update function in <code>...\XdkSensorLwm2mClient\source\SensorDeviceEnvironment.c</code> <em>line 82</em> within the <code>SensorDeviceEnvironment_update(...)</code> function. </p>
+<pre><code>void SensorDeviceEnvironment_update(enum ProcessingMode mode, bool notify)
+{
+    Retcode_T returnValue = RETCODE_FAILURE;
+    SensorDeviceSampleDataFloat_T sample;
+    Environmental_Data_T envDataHolder = { INT32_C(0), UINT32_C(0), UINT32_C(0) };
+
+    if (!enableSensor) return;
+
+    /* Read temperature, pressure, humidity current values */
+    returnValue = Environmental_readData(xdkEnvironmental_BME280_Handle, &amp;envDataHolder);
+
+    if ( RETCODE_OK == returnValue)
+    {
+        if (temperatureSensorDeviceData.enabled) {
+            sample.values[0] = TEMPERATURE_TO_C_FLOAT(envDataHolder.temperature);
+            SensorDevice_processDataFloat(mode, &amp;temperatureSensorDeviceData, &amp;sample);
+        }
+        if (humiditySensorDeviceData.enabled) {
+            sample.values[0] = HUMIDITY_TO_PERC_FLOAT(envDataHolder.humidity);
+            SensorDevice_processDataFloat(mode, &amp;humiditySensorDeviceData, &amp;sample);
+        }
+        if (pressureSensorDeviceData.enabled) {
+            sample.values[0] = PRESSURE_TO_HPA_FLOAT (envDataHolder.pressure);
+            SensorDevice_processDataFloat(mode, &amp;pressureSensorDeviceData, &amp;sample);
+        }
+    }
+    else
+    {
+        printf(&quot;Environmental Read actual Data Failed\n\r&quot;);
+    }
+    if (notify) {
+        if (SensorDevice_getDataFloat(&amp;temperatureSensorDeviceData, &amp;sample))
+            ObjectTemperature_setValue((float)sample.values[0]);
+        if (SensorDevice_getDataFloat(&amp;humiditySensorDeviceData, &amp;sample))
+            ObjectHumidity_setValue((float)sample.values[0]);
+        if (SensorDevice_getDataFloat(&amp;pressureSensorDeviceData, &amp;sample))
+            ObjectBarometer_setValue((float)sample.values[0]);
+    }
+}
+</code></pre>
+
+<p>The data is read, processed (e.g. min,max or average value is calculated) and the LWM2M barometer object is set with the <code>ObjectBarometer_setValue</code> function.</p>
+</li>
+<li>
+<p>Let's see what happens at that function. Go to <code>...\XdkSensorLwm2mClient\source\Lwm2mObject_Barometer.c</code> <em>line 141</em> and you will find the following code: </p>
+<pre><code>void ObjectBarometer_setValue(float sensorValue_hPa)
+{
+    Lwm2mUtil_updateSingleResource(sensorValue_hPa, &amp;updater);
+}
+</code></pre>
+
+<p>This will call the following function in <code>...\XdkSensorLwm2mClient\source\Lwm2mUtil.c</code> <em>line 66</em></p>
+<pre><code>void Lwm2mUtil_updateSingleResource(float value, Lwm2m_Single_Resource_Update_T * updater)
+{
+    if (LWM2M_MUTEX_LOCK(updater-&gt;mutex)) {
+        bool schedule = false;
+        updater-&gt;value = value;
+        if (!Callable_isAssigned(&amp;updater-&gt;callback)) {
+            Callable_assign(&amp;updater-&gt;callback, scheduleUpdateSingleResource);
+            schedule = true;
+        }
+        LWM2M_MUTEX_UNLOCK(updater-&gt;mutex);
+        if (schedule) Scheduler_enqueue(&amp;updater-&gt;callback, RC_OK);
+    }
+}
+</code></pre>
+
+<p>Here (over another helper function) the value is written to the LWM2M server using scheduleUpdateSingleResource.</p>
+</li>
+<li>
+<p>The LWM2M Server (if it is registered to observe this resource/object) will receive the value update and write it to the Bosch IoT Things (Central Registry) service.</p>
+</li>
+</ol>
+<p>All this happens as soon as the XDK is initialized (look at ). In order to get the data into your Bosch IoT XDK Demo App you need to subscribe for the updates of the values in the Central Registry. This is done when you select an XDK device in the dashboard of the demo app frontend. Let's look what happen in the code when you do that.</p>
+<h3>Subscribing for Changes</h3>
+<ol>
+<li>
+<p>First go to the beginning of <code>...\CloudApp\src\main\webapp\scripts\app\dashboard\dashboard.html</code> to find the following code:</p>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-md-5&quot;&gt;
+        &lt;form name=&quot;selectXDKForm&quot;&gt;
+            &lt;label for=&quot;repeatSelect&quot;&gt;Select XDK:&lt;/label&gt;
+            &lt;select name=&quot;repeatSelect&quot; id=&quot;repeatSelect&quot; ng-model=&quot;currentXDKSensorSelected&quot; class=&quot;form-control&quot; ng-change=&quot;changeXDK()&quot;&gt;
+                &lt;option style=&quot;display:none&quot; value=&quot;&quot;&gt;Please select a XDK&lt;/option&gt;
+                &lt;option ng-repeat=&quot;xdksensor in xdkSensors&quot; value=&quot;{{xdksensor.thingId}}&quot;
+                        class=&quot;{{getStyleClass(xdksensor.attributes.isOnline)}}&quot;&gt;
+                    {{xdksensor.thingId.split(&quot;:&quot;)[2]}} - {{getOnlineStatus(xdksensor.attributes.isOnline)}}
+                &lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>You can see that, whenever you select or <code>ng-change</code> an XDK device from the dropdown menu <code>changeXDK()</code> will be performed. Let's find out what it does.</p>
+</li>
+<li>
+<p>Go to <code>...\CloudApp\src\main\webapp\scripts\app\dashboard\dashboard.controller.js</code> <em>line 87</em> where you will find the following code:</p>
+<pre><code>//On XDK Change logic
+$scope.changeXDK = function () {
+    $scope.currentXDKSensor = $.grep($scope.xdkSensors, function (e) {
+        return e.thingId == $scope.currentXDKSensorSelected;
+    })[0];
+    if($scope.currentXDKSensor != null) {
+        XDKSubscription.start({id: $scope.currentXDKSensorSelected}, null);
+        $scope.subscribedSensors.push($scope.currentXDKSensorSelected);
+        $scope.updateChartData();
+    }
+}
+</code></pre>
+
+<p>Here you can see that first of all the selected sensor becomes the <code>currentXDKSensor</code>. After that XDKSubscription.start(...) is called, the subscription is stored and the charts will update.</p>
+</li>
+<li>
+<p>Find the following code at <code>...\CloudApp\src\main\webapp\scripts\components\cr\subscription.service.js</code>:</p>
+<pre><code>angular.module('xdkcloudappApp')
+    .factory('XDKSubscription', function ($resource) {
+        return $resource('api/things/:id/subscription', null, {
+            'start': {
+                method: 'POST'
+            },
+            'stop': {
+                method: 'DELETE'
+            }
+        });
+    });
+</code></pre>
+
+<p>There you will see that using <em>start</em> you call a REST API in the backend with <em>POST</em> method. Let's go into the REST API definition to find out what happens next.</p>
+</li>
+<li>
+<p>In <code>...\CloudApp\src\main\java\com\bosch\demo\xdkcloudapp\web\rest\ThingRestResource.java</code> at <em>line 159</em> find the following code:</p>
+<pre><code>@RequestMapping(value = &quot;/things/{id:.+}/subscription&quot;,
+    method = RequestMethod.POST,
+    produces = MediaType.TEXT_PLAIN_VALUE)
+@Timed
+public ResponseEntity startChangeSubscription(@PathVariable String id) {
+    log.info(&quot;Starting Subscription for Thing {}&quot;, id);
+
+    try {
+        crService.createSubscription().thenRun(() -&gt; {
+            crService.createFeaturesChangeSubscription(id);
+            crService.createAttributesChangeSubscriptionForThing(id);
+            crService.startSubscriptions();
+            crService.sendThingMessage(id, &quot;startObservation&quot;, null);
+        }).get(10, TimeUnit.SECONDS);
+    } catch (InterruptedException e) {
+        e.printStackTrace();
+    } catch (ExecutionException e) {
+        e.printStackTrace();
+    } catch (TimeoutException e) {
+        e.printStackTrace();
+    }
+
+    return new ResponseEntity(HttpStatus.OK);
+}
+</code></pre>
+
+<p>We can see that on invokation of the <em>POST</em> method the there are several methods from <em>crService</em> called. Let's look at some of them in the next step.</p>
+</li>
+<li>
+<p>Go to <code>...\CloudApp\src\main\java\com\bosch\demo\xdkcloudapp\service\CRService.java</code> <em>line 338</em> </p>
+<pre><code>public void createFeaturesChangeSubscription(String thingId) {
+    final ThingHandle thing = getThingHandle(thingId);
+    final String myThing_featureChangeRegistration = thingId + &quot;_featuresChangeRegistration&quot;;
+
+    if (featureChangeRegistrations.containsKey(myThing_featureChangeRegistration)) {
+        log.info(myThing_featureChangeRegistration + &quot; is already registered!&quot;);
+    } else {
+        FeaturesDataConsumer sensorDataConsumer = new FeaturesDataConsumer(thingId);
+        thing.registerForFeaturesChanges(myThing_featureChangeRegistration, sensorDataConsumer);
+        log.info(&quot;Created feature change subscription for Thing with thing ID: &quot;
+            + thing.getThingId());
+        featureChangeRegistrations.put(myThing_featureChangeRegistration, sensorDataConsumer);
+    }
+}
+</code></pre>
+
+<p>Using a <code>ThingHandle</code> the <code>createFeatureChangeSubscription(...)</code> method registers a <code>FeaturesDataConsumer</code> and stores them in the <code>featureChangeRegistrations</code>`.
+Similarly the attribute change subscription is handled, after which the subscriptions are started. From now on the sensorDataConsumer is informed about changes in the Central Registry on the associated XDK sensor <em>thing</em>. </p>
+</li>
+</ol>
+<h3>From Bosch IoT Things (Central Registry) Service to Frontend</h3>
+<p>Let's have a look how the <code>FeaturesDataConsumer</code> and the <code>AttributesDataConsumer</code> handles updates from the Central Registry.</p>
+<ol>
+<li>
+<p>Go to the end <code>...\CloudApp\src\main\java\com\bosch\demo\xdkcloudapp\service\CRService.java</code> starting with <em>line 842</em> to find the nested Class <code>AttributesDataConsumer</code> with the accept method:</p>
+<pre><code>public void accept(Change t) {
+    log.debug(&quot;Data Consumer executed for Attribute Change: &quot; + t.getPath().toString() + &quot;, &quot; + t.getValue().toString());
+    //Send via local socket connection to UI
+    xdkSensorService.sendXDKData(t);
+}
+</code></pre>
+
+<p>It simply forwards the changes to the <code>xdkSensorService</code> Let us have a look into that next.</p>
+<blockquote>
+<p>Note: If you go to <em>line 739</em> you will find the <code>FeaturesDataConsumer</code> class definition, which is a little more complicated. It combines the x,y and z axis value updates of the gyroscope into one update which makes it less readable. But in the end (<em>line 808</em>) it also forwards the data to <code>xdkSensorService</code>. It additionally <em>line 834</em> persists the updates in the sensor history. </p>
+</blockquote>
+</li>
+<li>
+<p>Go to <code>...\CloudApp\src\main\java\com\bosch\demo\xdkcloudapp\web\websocket\XDKSensorService.java</code> <em>line 56</em> to find the following code:</p>
+<pre><code>while (it.hasNext()) {
+    XDKSensorChangeDTO change = new XDKSensorChangeDTO();
+    Feature currentFeature = it.next();
+    change.setThingId(featureChange.getThingId());
+    change.setFeatureId(currentFeature.getId());
+    change.setProperties(thingChange.getValue().get().toString());
+
+    if(change.getFeatureId().equals(&quot;AlertNotification:0&quot;)) {
+
+        ...
+
+    }
+    messagingTemplate.convertAndSend(&quot;/topic/xdksensor&quot;, change);
+}
+</code></pre>
+
+<p>In the snippet above the featureChange gets prepared and sent with the topic <code>&quot;/topic/xdksensor&quot;</code> to the websocket. Let's see in the next step where this is picked up by the frontend.</p>
+</li>
+<li>
+<p>At <code>...\CloudApp\src\main\webapp\scripts\components\cr\xdksensorsocket.service.js</code> <em>line 35</em> you can see the following piece of code that is executed on page load:</p>
+<pre><code>subscribe: function () {
+    connected.promise.then(function () {
+        subscriber = stompClient.subscribe(&quot;/topic/xdksensor&quot;, function (data) {
+            listener.notify(JSON.parse(data.body));
+        });
+    }, null, null);
+},
+</code></pre>
+
+<p>There you will find that a listener will be notified whenever messages on the <code>&quot;/topic/xdksensor&quot;</code> topic come in. In the next step we will have a look what happens on the receiver side of that notification.</p>
+</li>
+<li>
+<p>Go to <code>...\CloudApp\src\main\webapp\scripts\app\dashboard\dashboard.controller.js</code> <em>line 34</em> to find the following code:</p>
+<pre><code>XDKSensorSocket.receive().then(null, null, function (xdkSensorValues) {
+    if ($scope.currentXDKSensor != null &amp;&amp; $scope.currentXDKSensor.thingId != null &amp;&amp; $scope.currentXDKSensor.thingId == xdkSensorValues.thingId) {
+
+        ...
+
+        var properties = JSON.parse(xdkSensorValues.properties);
+        if (properties != null &amp;&amp; typeof properties == 'object') {
+            //Update feature properties with newest values
+            var keys = Object.keys(properties);
+            if(keys.length === 1) {
+                //Single property change has been sent
+                $scope.currentXDKSensor.features[xdkSensorValues.featureId].properties[keys[0]] = properties[keys[0]];
+                /*if(keys[0] == 'xValue' || keys[0] == 'yValue' || keys[0] == 'zValue' ) {
+                    $scope.currentXDKSensor.features[xdkSensorValues.featureId].properties.sensorValue =
+                }*/
+            } else {
+                //Feature Block with all properties has been sent
+                $scope.currentXDKSensor.features[xdkSensorValues.featureId].properties = properties;
+            }
+            //Update the charts
+            $scope.updateChartData();
+    ...
+</code></pre>
+
+<p>This code snippet maps the received data on the <code>currentXDKSensor</code> model and update the chart data afterwards.</p>
+<p>This updates the view in the browser with the new values from the XDK.</p>
+</li>
+</ol>
+<h2>Follow the Configuration Updates</h2>
+<p>This chapter will help you understand, what happens when you update the XDK configuration in the Bosch IoT XDK Demo App UI by following the update through the code to the XDK firmware.  </p>
+<p><img src="./resources/img/xdk_cloudAppArchGreenPath.png" alt="Follow the Configuration Updates Architecture" />  </p>
+<ol>
+<li>
+<p>Let's start with the html code right away. <code>...\CloudApp\src\main\webapp\scripts\app\xdkconfig\xdkconfig.html</code> represents the static part of the <em>Configuration</em> <a href="http://xdkcloudapp.bcx.bosch-iot-cloud.com/#/xdkconfig">tab</a> of the Bosch XDK IoT Demo App. From <em>line 93</em> onward you can see the configuration form with the Angular JS tag <code>ng-submit=updateConfig()</code>.  
+</p>
+<pre><code>&lt;form class=&quot;form-horizontal&quot; role=&quot;form&quot; name=&quot;form&quot; novalidate ng-submit=&quot;updateConfig()&quot; show-validation&gt;
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label for=&quot;field_accelEnabled&quot; class=&quot;col-sm-2 control-label&quot;&gt;
+                &lt;span&gt;Accelerometer&lt;/span&gt;
+            &lt;/label&gt;
+        ...
+</code></pre>
+
+<p>Also have a look around <em>line 195</em> to find out how Angular.js. In this code snippet you can see how the transport interval value is bound to the angular model <em>selectedXDKDevice</em>, as well as how to validate and react on invalid user input.</p>
+<pre><code>&lt;div class=&quot;form-group&quot;&gt;
+    &lt;label for=&quot;field_transportInterval&quot; class=&quot;col-sm-2 control-label&quot;&gt;
+        &lt;span&gt;Transport Interval (ms)&lt;/span&gt;
+    &lt;/label&gt;
+
+    &lt;div class=&quot;col-sm-2&quot;&gt;
+        &lt;input type=&quot;number&quot; class=&quot;form-control&quot; name=&quot;transportInterval&quot;
+               id=&quot;field_transportInterval&quot;
+               ng-model=&quot;selectedXDKDevice.transportInterval&quot; ng-pattern=&quot;regex&quot;&gt;
+
+        &lt;div ng-show=&quot;form.transportInterval.$dirty &amp;&amp; form.transportInterval.$invalid&quot;&gt;
+            &lt;p class=&quot;help-block&quot;
+               translate=&quot;xdkcloudappApp.xdkconfig.messages.validate.frequency.range&quot;&gt;
+                Only values between 1000 and 30000 are valid
+            &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+</li>
+<li>
+<p>To check what happens on submit, that is what <em>updateConfig()</em> does, go to <code>...\CloudApp\src\main\webapp\scripts\app\xdkconfig\xdkconfig.controller.js</code> <em>line 41</em> to find it's definition. </p>
+<pre><code>$scope.updateConfig = function () {
+    XDKChangeConfig.update({id: $scope.selectedXDKId}, $scope.selectedXDKDevice)
+        .$promise.then(function (data) {
+            $scope.error = null;
+            $scope.success = 'OK';
+        }, function (error) {
+            $scope.success = null;
+            $scope.error = 'ERROR';
+        });
+};
+</code></pre>
+
+<p>As you can see the <em>updateConfig()</em> function calls an <code>update</code> function on XDKChangeConfig passing the selected XDK's ID and the selected device (incl. its properties).</p>
+<p>If you wondered, where to find the <code>ng-pattern=&quot;regex&quot;</code> for above used form validation, go to <em>line 9</em> where you will find the following definition:</p>
+<pre><code>$scope.regex = /^([1-9][0-9]{3,4}|30000)$/;
+</code></pre>
+
+</li>
+<li>
+<p>So where is this <em>XDKChangeConfig</em> defined? Let's have a look into <code>...\CloudApp\src\main\webapp\scripts\components\cr\changeconfig.service.js</code>.</p>
+<pre><code>angular.module('xdkcloudappApp')
+    .factory('XDKChangeConfig', function ($resource) {
+        return $resource('api/things/:id/changeSensorConfiguration', null, {
+            'update': {
+                method: 'PUT'
+            }
+        });
+    });
+</code></pre>
+
+<p>So here is the definition of <em>XDKChangeConfig.update</em> and as you can see it calls a REST API at <code>'api/things/:id/changeSensorConfiguration'</code> with PUT method using the ID and the configuration properties passed earlier.  
+</p>
+<p>As you might have noticed, so far we were only moving within the <code>...\CloudApp\src\main\webapp</code> folder of the application sources. As this is a single page application all used <em>js</em> files need to be included in <code>...\CloudApp\src\main\webapp\index.html</code>.</p>
+<p>We are through the frontend part of this path now. Let's have a look into the backend and find the REST API resource next.</p>
+</li>
+<li>
+<p>The Rest API we are looking for can be found at <code>...CloudApp\src\main\java\com\bosch\demo\xdkcloudapp\web\rest\ThingRestResource.java</code>. In <em>line 87</em> and following we can find what happens with our PUT method call from the UI.</p>
+<pre><code>@RequestMapping(value = &quot;/things/{id:.+}&quot;,
+    method = RequestMethod.PUT,
+    produces = MediaType.APPLICATION_JSON_VALUE)
+@Timed
+public ResponseEntity&lt;String&gt; changeThingAttributes(@PathVariable String id, @RequestBody String attributes) {
+    log.debug(&quot;REST request to change Thing : {}&quot;, id);
+    JsonObject attributeObj = JsonFactory.readFrom(attributes).asObject();
+    crService.changeAttributesForThing(id, attributeObj);
+    return new ResponseEntity&lt;String&gt;(attributeObj.toString(), HttpStatus.OK);
+
+}
+</code></pre>
+
+<p>As you can see, after parsing the attributes to a json format, we are calling crService.changeAttributesForThing(...) method so let us go there next.</p>
+</li>
+<li>
+<p>Navigate to <code>...\CloudApp\src\main\java\com\bosch\demo\xdkcloudapp\service\CRService.java</code> <em>line 458</em> to find the <code>changeAttributeForThing(...)</code> method. </p>
+<pre><code>public void changeAttributesForThing(String thingId, JsonObject value) {
+    /* Create a handle for an existing thing */
+    final ThingHandle thing = getThingHandle(thingId);
+    try {
+        thing.setAttributes(value).whenComplete((change, throwable) -&gt; {
+            if (throwable != null) {
+                log.error(&quot;Changing Attributes for thing failed {}&quot;, throwable);
+            } else
+                log.debug(&quot;Changing Attributes successful&quot;, change);
+        }).get(5, TimeUnit.SECONDS);
+    } catch (InterruptedException e) {
+        e.printStackTrace();
+    } catch (ExecutionException e) {
+        e.printStackTrace();
+    } catch (TimeoutException e) {
+        e.printStackTrace();
+    }
+}
+</code></pre>
+
+<p>This is already part of our <a href="https://things.apps.bosch-iot-cloud.com/">Central Registry Java Client</a> implementation. Here we are getting a thing handle from the Central Registry, which is the representation of our XDK device in the Central Registry (Bosch IoT Things). The thing is then reset with the new attributes (our changed configuration) using Java 8 syntax.  
+</p>
+</li>
+<li>
+<p>From here the Bosch IoT Thing (Central Registry) service notifies the LWM2M server about the change as the latter is subscribed as an observer for changes on this thing.</p>
+</li>
+<li>
+<p>The LWM2M server propagates the changes mapping the thing on an LWM2M object and sends this information down to the XDK device.</p>
+</li>
+<li>
+<p>Let's have a look what the XDK device does with this information. Go to the XDK Workbench and open <code>...\XdkSensorLwm2mClient\source\Lwm2mObject_SensorDevice.c</code> to see the sensor device LWM2M object structure:</p>
+<pre><code>struct SensorDeviceResource_S sensorDeviceResources =
+{
+        { 0,  LWM2M_DYNAMIC(rw_interval) },
+        { 1,  LWM2M_BOOL(true) },
+        { 2,  LWM2M_BOOL(true) },
+        { 3,  LWM2M_BOOL(true) },
+        { 4,  LWM2M_BOOL(true) },
+        { 5,  LWM2M_BOOL(true) },
+        { 6,  LWM2M_BOOL(true) },
+        { 7,  LWM2M_BOOL(true) },
+        { 8,  LWM2M_DYNAMIC(rw_preprocessingMode) },
+        { 9,  LWM2M_STRING_RO(&quot;&quot;) },
+};
+</code></pre>
+
+<p>The first resource <code>{ 0,  LWM2M_DYNAMIC(rw_interval) },</code> represents the update interval that you set in the Bosch IoT XDK Demo App UI. As you can see, for this resource there is a specific update function defined. Let's have a look at it.</p>
+</li>
+<li>
+<p>In the same file look at <em>line 122</em> to see the following code snippet:</p>
+<pre><code>static retcode_t rw_interval(Lwm2mSerializer_T *serializer_ptr, Lwm2mParser_T *parser_ptr)
+{
+    if (NULL != parser_ptr) {
+        /* write value */
+        int32_t value;
+        retcode_t rc = Lwm2mParser_getInt(parser_ptr, &amp;value);
+        if (RC_OK == rc &amp;&amp; value != g_transport_interval) {
+            if (LWM2M_MUTEX_LOCK(mutex)) {
+                g_transport_interval = value;
+                LWM2M_MUTEX_UNLOCK(mutex);
+                printf(&quot;tranport interval changed: %ld\n&quot;, (long)value);
+                if (started) {
+                    Lwm2m_URI_Path_T path = {OBJECTS_IX_SENSORDEVICE_0, OBJECTS_IX_SENSORDEVICE_0, SENSORDEVICE_RESOURCES_INDEX(transportInterval)};
+                    Lwm2mReporting_resourceChanged(&amp;path);
+                }
+            }
+        }
+        return rc;
+</code></pre>
+
+<p>You can see how the transport interval value is set and that the change is reported using the LWM2M URI.</p>
+</li>
+<li>
+<p>This finishes this chapter.</p>
 </li>
 </ol>
 

@@ -301,13 +301,14 @@ img {
 <p>This Getting Started guide will help you set up your environment for XDK and Bosch IoT Cloud development. It will guide you through all the necessary steps using the Bosch IoT XDK Demo App as an example. The app's purpose is to demonstrate how sensor data can be persisted, visualized and used in a cloud environment using the Bosch IoT Suite services.</p>
 <blockquote>
 <p>Note: If you have received this guide <strong>prior to the event</strong>, here are some steps you can already start with: <br />
-1. Start with checking the prerequisites and downloading the necessary software specified <a href="#nav_prereq">below</a>.<br />
-2. Get your cloud development environment ready, following the <a href="#nav_devsetup">Setup your Cloud Development Environment</a> chapter.<br />
-3. Get familiar with the <a href="#nav_architecture">architecture</a> of the Bosch IoT XDK Demo App.<br />
-4. Look through the documentation of the used software components specified <a href="#nav_furtherdoc">here</a>.</p>
+1. Start with checking the prerequisites and downloading the necessary software specified <a href="#prerequisites-and-resources">below</a>.<br />
+2. Get your cloud development environment ready, following the <a href="#setup-your-cloud-development-environment">Setup your Cloud Development Environment</a> chapter.<br />
+3. Get familiar with the <a href="#architecture">architecture</a> of the Bosch IoT XDK Demo App.<br />
+4. Look through the documentation of the used software components specified <a href="#further-documentation">here</a>.</p>
 </blockquote>
 <h2>Overview</h2>
-<h3><a name="nav_prereq"></a> Prerequisites and Resources</h3>
+<p><a name="prerequisites-and-resources"></a></p>
+<h3>Prerequisites and Resources</h3>
 <p>To complete this guide you will need a computer with local admin privileges to install the necessary software and drivers. See the following list of prerequisites:</p>
 <ul>
 <li>Windows 64-bit system for the XDK Workbench</li>
@@ -319,8 +320,8 @@ img {
 <p>Additionally you will have to <strong>download the following software</strong> (installation will be part of the guide):</p>
 <ul>
 <li>Command line <a href="http://git-scm.com/downloads">Git</a> client</li>
-<li><a href="https://nodejs.org/en/download/">node.js</a> with Node Package Manager</li>
-<li><a href="https://github.com/cloudfoundry/cli#downloads">Cloud Foundry CLI</a></li>
+<li>The latest (stable) <a href="https://nodejs.org/en/download/">node.js</a> with Node Package Manager</li>
+<li>The latest <a href="https://github.com/cloudfoundry/cli#downloads">Cloud Foundry CLI</a></li>
 <li>IDE for Java development of your choice e.g. <a href="http://www.eclipse.org/downloads/">Eclipse IDE</a> or <a href="https://www.jetbrains.com/idea/download/">IntelliJ Communitiy Edition</a></li>
 <li><a href="https://maven.apache.org/download.cgi">Apache Maven</a> (starting with 3.0.0) if it is not already embedded in your IDE</li>
 </ul>
@@ -331,20 +332,21 @@ img {
 <li>micro SD card adapter</li>
 <li>WiFi information</li>
 </ul>
-<h3><a name="nav_architecture"></a> Architecture</h3>
+<h3>Architecture</h3>
 <p>The image below shows you the architecture overview of the Bosch IoT XDK Demo App.</p>
 <img src="./resources/img/xdk_cloudAppArchitecture.png" style="max-height:none"/>
 <p>The XDK Firmware implements the LWM2M protocol (CoAP-based) to communicate with the LWM2M Server in the cloud. The LWM2M server has an adapter to communicate with the Bosch IoT Things service (formerly known as Central Registry or CR). The Backend of the Bosch IoT XDK Demo App implements a client for the CR Service as a single point of access to the XDK. In addition, the Demo App uses a DB service (MongoDB) to persist sensor data (similar to a time series DB) and implements the Identity Management (IM) Java Client for user authentication &amp; authorization. The Demo App also provides a web-based user interface to display XDK sensor data and to configure the XDK device (e.g. control the LED lamps). </p>
 <h2>Instructions</h2>
 <h3>Overview of the Steps</h3>
 <ol>
-<li><a href="#nav_xdksetup">Setup the XDK</a></li>
-<li><a href="#nav_devsetup">Setup your Cloud Development Environment</a></li>
-<li><a href="#nav_cloudsetup">Setup your Cloud Space</a></li>
-<li><a href="#nav_appsetup">Deploy your Cloud App</a></li>
-<li><a href="#nav_checkresults">Check your Results</a></li>
+<li><a href="#xdk-setup">Setup the XDK</a></li>
+<li><a href="#setup-your-cloud-development-environment">Setup your Cloud Development Environment</a></li>
+<li><a href="#setup-your-cloud-space">Setup your Cloud Space</a></li>
+<li><a href="#deploy-the-bosch-IoT-XDK-demo-app">Deploy your Cloud App</a></li>
+<li><a href="#check-your-results">Check your Results</a></li>
 </ol>
-<h3><a name="nav_xdksetup"></a> XDK Setup</h3>
+<p><a name="xdk-setup"></a></p>
+<h3>XDK Setup</h3>
 <p>As a first step you will install the XDK Workbench, configure and flash your XDK to work with the Bosch IoT XDK Demo App.</p>
 <ol>
 <li>
@@ -392,10 +394,11 @@ LWM2MDEFSRV = coap://185.112.178.178:5683
 </li>
 <li>Turn on the XDK. It will now send its data to the LWM2M server running in the cloud using the LWM2M protocol.</li>
 </ol>
-<h3><a name="nav_devsetup"></a> Setup your Cloud Development Environment</h3>
+<p><a name="setup-your-cloud-development-environment"></a> </p>
+<h3>Setup your Cloud Development Environment</h3>
 <p>In this part you will install and prepare all the necessary software for your cloud development environment together. The cloud application has been generated and developed with <a href="https://jhipster.github.io/">JHipster</a> a Yeoman based generator to create a Spring Boot + AngularJS project.</p>
 <blockquote>
-<p>Note: The following instructions are only valid, if you have local admin privileges on your computer. If you don't, you can follow the alternative path <a href="dev_guide.html#nav_noAdminInstall">here (no admin guide for Windows)</a>. </p>
+<p>Note: The following instructions are only valid, if you have local admin privileges on your computer. If you don't, you can follow the alternative path <a href="dev_guide.md#Setup-your-Cloud-Development-Environment-without-Admin-Rights-Windows">here (no admin guide for Windows)</a>. </p>
 </blockquote>
 <ol>
 <li>Install Oracle Java JDK 1.8 from <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Oracle Java JDK 8 Download Site</a>, if it is not already installed.</li>
@@ -427,7 +430,8 @@ Install Git for your command line.<br />
 </p>
 </li>
 </ol>
-<h3><a name="nav_cloudsetup"></a> Setup your Cloud Space</h3>
+<p><a name="setup-your-cloud-space"></a></p>
+<h3>Setup your Cloud Space</h3>
 <p>In this step you will set up your Bosch IoT Cloud Space to prepare it for XDK CloudApp deployment.</p>
 <blockquote>
 <p>Note: Your space has the name <em>HackXX</em> where <em>XX</em> stands for an arbitrary number between 01 and 50. This number is your unique identifier that will be used in several places throughout this guide. Simply replace <em>XX</em> whith your number wherever you see it in the guide.</p>
@@ -442,39 +446,45 @@ Check your mail account:
 <li>Click on the <strong>Accept invitation</strong> link to open the Bosch IoT Cloud Development Console in your browser.  initially you will be prompted to set a password.  
 </li>
 <li>Select your <em>HackXX</em> space by clicking on it.<br />
-<img src="./resources/img/img_cloudorg_empty.png" alt="Overview of XDKCloud org in the developer console" /></li>
+<img src="./resources/img/img_cloudorg_empty.png" alt="Overview of XDKCloud org in the developer console" />  
+</li>
 </ol>
 </li>
 <li>
 Add the <em>MongoDB</em> service to your space:
 <ol>
 <li>In your space click on the <strong>Add Service</strong> button.<br />
-<img src="./resources/img/img_cloudspace_empty.png" alt="Empty space in the developer console" /></li>
+<img src="./resources/img/img_cloudspace_empty.png" alt="Empty space in the developer console" />  
+</li>
 <li>Select the <em>MongoDB</em> Service.<br />
-<img src="./resources/img/img_marketplace.png" alt="IoT marketplace" /></li>
+<img src="./resources/img/img_marketplace.png" alt="IoT marketplace" />  
+</li>
 <li>Choose the <em>Shared MongoDB Silver - QA</em> service plan and click on <strong>Select this plan</strong>.<br />
-<img src="./resources/img/img_selectplan_mongo.png" alt="Select plan" /></li>
+<img src="./resources/img/img_selectplan_mongo.png" alt="Select plan" />  
+</li>
 <li>In the following dialog use <code>xdk_service_storage</code> for the service instance id.</li>
 <li>Select your <em>HackXX</em> space and hit the <strong>Add</strong> button.<br />
-<img src="./resources/img/img_serviceadd_mongo.png" alt="Service details for mongo DB" /></li>
+<img src="./resources/img/img_serviceadd_mongo.png" alt="Service details for mongo DB" />  
+</li>
 </ol>
 </li>
 <li>
 Add the <em>Bosch IoT Things</em> service (formerly known as Central Registry) to your space in the same fashion using the following details:
 <ol>
 <li>Choose the <em>Free</em> service plan.</li>
-<li>Choose your <em>HackXX</em> space. </li>
-<li>Name your service instance <code>xdk_service_cr</code>.<br />
-<img src="./resources/img/img_serviceadd_cr.png" alt="Service details for Bosch IoT Central Registry" /></li>
+<li>Name your service instance <code>xdk_service_cr</code>.</li>
+<li>Choose your <em>HackXX</em> space. <br />
+<img src="./resources/img/img_serviceadd_cr.png" alt="Service details for Bosch IoT Central Registry" />  
+</li>
 </ol>
 </li>
 <li>
 Add the <em>Bosch IoT Permissions</em> service (formerly known as Identity Management) to your space.
 <ol>
 <li>Choose the <em>Free</em> service plan.</li>
-<li>Choose your <em>HackXX</em> space. </li>
-<li>Name your service instance <code>xdk_service_im3</code>.<br />
-<img src="./resources/img/img_serviceadd_im3.png" alt="Service details for Bosch IoT Identity Management" />
+<li>Name your service instance <code>xdk_service_im3</code>.</li>
+<li>Choose your <em>HackXX</em> space. <br />
+<img src="./resources/img/img_serviceadd_im3.png" alt="Service details for Bosch IoT Identity Management" /><br />
 <a name="nav_appcredentials"></a></li>
 </ol>
 </li>
@@ -482,18 +492,22 @@ Add the <em>Bosch IoT Permissions</em> service (formerly known as Identity Manag
 Change your initial IM Administrator password.
 <ol>
 <li>Click on the <strong>Manage</strong> link of your IM3 service to open the Identity Management Admin UI.<br />
-<img src="./resources/img/img_cloudspace_full_im3.png" alt="Space with added services in the developer console" /></li>
+<img src="./resources/img/img_cloudspace_full_im3.png" alt="Space with added services in the developer console" />  
+</li>
 <li>Click on <strong>Login</strong> on the upper left.<br />
-<img src="./resources/img/img_servicemgr_im3.png" alt="IM3 service management" /></li>
+<img src="./resources/img/img_servicemgr_im3.png" alt="IM3 service management" />  
+</li>
 <li>Use the following credentials for first time login:<br />
 <em>User:</em> <code>Admin</code><br />
 <em>Password:</em> <code>ChangeThis1!</code><br />
-  <img src="./resources/img/img_im3_initlogin.png" alt="IM3 intitial login" /></li>
+  <img src="./resources/img/img_im3_initlogin.png" alt="IM3 intitial login" />  
+</li>
 <li>Change your password when prompted and remember it, as these will be your admin user credentials within your application. </li>
 </ol>
 </li>
 </ol>
-<h3><a name="nav_appsetup"></a> Deploy the Bosch IoT XDK Demo App</h3>
+<p><a name="deploy-the-bosch-IoT-XDK-demo-app"></a></p>
+<h3>Deploy the Bosch IoT XDK Demo App</h3>
 <p>In this section you will prepare and build the Bosch IoT XDK Demo App and push it to your space in the cloud.</p>
 <h4>Setup Bosch IoT Things (Central Registry)</h4>
 <p>To authenticate the Demo App at the Bosch IoT Things service, you will need a public private key pair and publish the public key to the Bosch IoT Central Registry.</p>
@@ -502,12 +516,15 @@ Change your initial IM Administrator password.
 <p>Using the Java keytool which is part of the JDK 1.8 create a keystore and generate a certificate with the following command.<br />
 <code>keytool -genkeypair -noprompt -dname &quot;CN=-, OU=-, O=-, L=-, S=-, C=-&quot; -keyalg EC -alias CR -sigalg SHA512withECDSA -validity 365 -keystore CRClient.jks</code>  
 </p>
+<blockquote>
+<p>Note: This will create a CRClient.jks file in the path you are executing this command from. You will need this file later when <a href="#deploy-the-bosch-IoT-XDK-demo-app">building your app</a>. </p>
+</blockquote>
 </li>
 <li>
 <p>When prompted enter a keystore password and an alias password and remember them.</p>
 <blockquote>
 <p>Note: You will be storing these in a plain text file later so please use a new password and not one of your personal ones.<br />
-You can set seperate passwords for the keystore and for the alias, though to keep it simple we recommend using the same one. </p>
+You can set seperate passwords for the keystore and for the alias, though to keep it simple, we recommend using the same one. </p>
 </blockquote>
 </li>
 <li>
@@ -519,45 +536,44 @@ and<br />
 </li>
 <li>
 <p>Copy the text representation including <code>—–BEGIN CERTIFICATE—–</code> down to <code>—–END CERTIFICATE—–</code> into the clipboard as in the example below.<br />
-<img src="./resources/img/img_cpycert.png" alt="Example of public key" /></p>
+<img src="./resources/img/img_cpycert.png" alt="Example of public key" />  
+</p>
 </li>
 <li>
 <p>In your browser go to your space in the Bosch IoT Cloud and open the &quot;Manage&quot; dialog of your Bosch IoT Things (Central Registry) service instance.<br />
-<img src="./resources/img/img_cloudspace_full_cr.png" alt="Space with added services in the developer console" /></p>
+<img src="./resources/img/img_cloudspace_full_cr.png" alt="Space with added services in the developer console" />  
+</p>
 </li>
 <li>There you will find a &quot;Submit your Public Key&quot; frame, where you can paste your public key to. Finish by hitting the &quot;Submit Public Key&quot; button.<br />
-<img src="./resources/img/img_servicemgr_cr.png" alt="Manage your Bosch IoT Central Registry service instance" /></li>
+<img src="./resources/img/img_servicemgr_cr.png" alt="Manage your Bosch IoT Central Registry service instance" />  </li>
 </ol>
 <h4>Prepare the Bosch IoT XDK Demo App</h4>
 <blockquote>
 <p>Note: You will need your unique identifier which is a two-digit number represented using <em>XX</em> and can be read from your cloud space name <em>hackXX</em>.</p>
 </blockquote>
 <ol>
-<li>
-<p>Import the Bosch IoT XDK Demo App to your IDE from the <code>XDK_Cloud_App.zip</code> file as a Maven project.</p>
-</li>
-<li>
-<p>Copy the above created CRClient.jks keystore to the &quot;src/main/resources/keystore/&quot; folder of the Demo App.<br />
-<img src="./resources/img/img_projectpath.png" alt="Resulting project path structure" /></p>
-</li>
-<li>
-<p>Go to &quot;deploy/cloudfoundry/manifest.yml&quot; and change the name of the app to make it unique. See below example (replace <em>XX</em> with your unique identifier).</p>
-<pre><code>---
-path: xdkcloudapp-1.0.0-SNAPSHOT.war
-instances: 1
-buildpack: https://github.com/cloudfoundry/java-buildpack
-services:
-- xdk_service_im3
-- xdk_service_storage
-- xdk_service_cr
-applications:
-- name: xdkcloudappXX
-domain: bcx.bosch-iot-cloud.com
-env:
-    SPRING_PROFILES_DEFAULT: prod  
+<li>Import the Bosch IoT XDK Demo App to your IDE from the <code>XDK_Cloud_App.zip</code> file as a Maven project.</li>
+</ol>
+<p><a name="nav_use_jks"> </a>
+2. Copy the above created CRClient.jks keystore to the &quot;src/main/resources/keystore/&quot; folder of the Demo App.<br />
+<img src="./resources/img/img_projectpath.png" alt="Resulting project path structure" /><br />
+3. Go to &quot;deploy/cloudfoundry/manifest.yml&quot; and change the name of the app to make it unique. See below example (replace <em>XX</em> with your unique identifier).</p>
+<pre><code>    ---
+    path: xdkcloudapp-1.0.0-SNAPSHOT.war
+    instances: 1
+    buildpack: https://github.com/cloudfoundry/java-buildpack
+    services:
+    - xdk_service_im3
+    - xdk_service_storage
+    - xdk_service_cr
+    applications:
+    - name: xdkcloudappXX
+    domain: bcx.bosch-iot-cloud.com
+    env:
+        SPRING_PROFILES_DEFAULT: prod  
 </code></pre>
 
-</li>
+<ol>
 <li>
 <p>In &quot;src/main/resources/config/application-prod.yml&quot; change the Central Registry settings on the bottom to include the passwords you have set when creating the keystore. Use the snippet below as an example (replace everything in &lt;&gt;).  
 </p>
@@ -600,7 +616,8 @@ cr:
 </p>
 </li>
 </ol>
-<h3><a name="nav_checkresults"></a> Check your Results</h3>
+<p><a name="check-your-results"></a></p>
+<h3>Check your Results</h3>
 <blockquote>
 <p>Note: You will need your unique identifier which is represented using <em>XX</em> and can be read from your cloud space name <em>hackXX</em>.</p>
 </blockquote>
@@ -609,22 +626,24 @@ cr:
 <li>Use your admin user credentials to login. You have created them <a href="#nav_appcredentials">when setting up the Identity Management</a>.</li>
 <li>Go to the <strong>Configuration</strong> tab.</li>
 <li>Open the <strong>Claim new XDK</strong> dialog, enter the <em>MAC address</em> printed on the back of your XDK under <em>WLAN</em> and hit <strong>Claim Thing</strong>.<br />
-  <img src="./resources/img/img_xdkback.png" alt="Picture of XDK - backside" /></li>
+  <img src="./resources/img/img_xdkback.png" alt="Picture of XDK - backside" />  </li>
 <li>Your XDK should now appear under <strong>Your claimed XDKs</strong>.</li>
 <li>Open the <strong>Dashboard</strong>, select your XDK from the drop-down menu and observe it, while shaking or turning your XDK.<br />
-  <img src="./resources/img/img_appdashboard.png" alt="Dashboard of the Bosch IoT XDK Demo App" /></li>
+  <img src="./resources/img/img_appdashboard.png" alt="Dashboard of the Bosch IoT XDK Demo App" />  </li>
 <li>Try to switch the LED lamps using the Dashboard.</li>
 <li>Congratulations you have finished the <em>Getting Started</em> guide. For more insight have a look into the code using one of the following guides and documentations. Happy hacking!</li>
 </ol>
-<h4><a name="nav_furtherdoc"></a> Further Documentation</h4>
+<p><a name="further-documentation"></a> </p>
+<h4>Further Documentation</h4>
 <ul>
-<li><a href="dev_guide.html#nav_runlocally">Running the Bosch IoT XDK Demo App locally</a></li>
+<li><a href="dev_guide.md#Run-the-Demo-App-Locally">Running the Bosch IoT XDK Demo App locally</a></li>
 <li><a href="../../README.md">ReadMe Bosch IoT XDK Demo App</a></li>
 <li><a href="http://xdk.bosch-connectivity.com/examples">Bosch XDK Documentation</a> </li>
 <li><a href="http://m2m.bosch-si.com/dokuwiki/doku.php">Bosch IoT Things (Central Registry) Documentation</a></li>
 <li><a href="https://im3.apps.bosch-iot-cloud.com/fusion/app/im-docu-dev">Bosch IoT Permissions (Identity Management) Developer Guide</a></li>
 <li><a href="http://docs.cloudfoundry.org/">Cloud Foundry Documentation</a></li>
 <li><a href="https://jhipster.github.io/">JHipster Web Site</a></li>
+<li><a href="https://apps.sys.bosch-iot-cloud.com">Link to Bosch IoT Cloud Developer Console</a></li>
 </ul>
 
 </body>
