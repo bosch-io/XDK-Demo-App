@@ -122,9 +122,8 @@ But first of all let us look at the apps architecture once more.
 
 As you can see there are two ways the Bosch IoT XDK Demo Frontend communicates with the Backend. One is using REST endpoints and the other is using web sockets. So for example a configuration update from the UI is using a REST API (green path)  while for example sensor values are updated using a web socket (red path).
 
+
 ## Follow the Sensor Values
-
-
 
 ![Follow the Sensor Value Updates Architecture][img_arch_red]  
 

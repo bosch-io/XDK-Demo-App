@@ -282,6 +282,7 @@ and
 - [Cloud Foundry Documentation][lnk_info_docs_cf]
 - [JHipster Web Site][lnk_info_docs_jhipster]
 - [Link to Bosch IoT Cloud Developer Console](https://apps.sys.bosch-iot-cloud.com)
+- [Running the Bosch IoT XDK Demo App locally](dev_guide.md#understanding-the-code)
 
 [//]: # (internal docu links)
 
